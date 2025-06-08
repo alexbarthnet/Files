@@ -1,3 +1,4 @@
+; CA policy file to prevent loading the default certificate templates on a new CA
 [Version]
 Signature="$Windows NT$"
  
