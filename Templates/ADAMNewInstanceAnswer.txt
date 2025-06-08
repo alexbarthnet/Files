@@ -1,0 +1,16 @@
+; AD LDS answer file for new instance
+[ADAMInstall]
+InstallType=Unique
+ShowOrHideProgressGUI=Show
+InstanceName=%INSTANCENAME%
+NewApplicationPartitionToCreate=%PARTITION%
+LocalLDAPPortToListenOn=%LDAPPORT%
+LocalSSLPortToListenOn=%SSLPORT%
+DataFilesPath=E:\%INSTANCENAME%
+LogFilesPath=F:\%INSTANCENAME%
+ServiceAccount=%SERVICEACCOUNT%
+ServicePassword=%SERVICEPASSWORD%
+AddPermissionsToServiceAccount=Yes
+Administrator=%ADMINISTRATOR%
+; ImportLDIFFiles="MS-UserProxy.LDF"
+ImportLDIFFiles="MS-AdamSyncMetadata.LDF" "MS-ADLDS-DisplaySpecifiers.LDF" "MS-MembershipTransitive.LDF" "MS-ParentDistname.LDF" "MS-ReplValMetadataExt.LDF" "MS-SecretAttributeCARs.LDF" "MS-SetOwnerBypassQuotaCARs.LDF" "MS-UserProxy.LDF"

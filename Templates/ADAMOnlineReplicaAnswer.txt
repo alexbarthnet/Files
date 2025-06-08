@@ -1,0 +1,15 @@
+; AD LDS answer file for new replica from an online source
+[ADAMInstall]
+InstallType=Replica
+ShowOrHideProgressGUI=Show
+InstanceName=%INSTANCENAME%
+ReplicateOnlySpecifiedPartitions=No
+LocalLDAPPortToListenOn=%LDAPPORT%
+LocalSSLPortToListenOn=%SSLPORT%
+DataFilesPath=E:\%INSTANCENAME%
+LogFilesPath=F:\%INSTANCENAME%
+ServiceAccount=%SERVICEACCOUNT%
+ServicePassword=%SERVICEPASSWORD%
+AddPermissionsToServiceAccount=Yes
+SourceServer=%SOURCESERVER%
+SourceLDAPPort=%SOURCELDAPPORT%
