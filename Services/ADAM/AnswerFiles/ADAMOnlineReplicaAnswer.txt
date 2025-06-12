@@ -3,7 +3,7 @@
 InstallType=Replica
 ShowOrHideProgressGUI=Show
 InstanceName=%INSTANCENAME%
-ReplicateOnlySpecifiedPartitions=No
+ApplicationPartitionsToReplicate=*
 LocalLDAPPortToListenOn=%LDAPPORT%
 LocalSSLPortToListenOn=%SSLPORT%
 DataFilesPath=%DATAFILESPATH%
