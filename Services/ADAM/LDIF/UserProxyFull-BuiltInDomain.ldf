@@ -1,0 +1,51 @@
+#==================================================================
+# @@UI-Description: AD LDS BuiltInDomain class.
+#
+# This file contains the Built-in Domain class.
+# It should be imported with the following command:
+#   ldifde -i -f MS-Sync-BuiltInDomain.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: cn=Builtin-Domain,cn=Schema,cn=Configuration,dc=X
+changetype: ntdsschemaadd
+objectClass: classSchema
+governsID: 1.2.840.113556.1.5.4
+ldapDisplayName: builtinDomain
+adminDisplayName: Builtin-Domain
+adminDescription: Builtin-Domain
+# schemaIDGUID: bf967a81-0de6-11d0-a285-00aa003049e2
+schemaIDGUID:: gXqWv+YN0BGihQCqADBJ4g==
+objectClassCategory: 1
+systemFlags: 16
+# subclassOf: top
+subclassOf: 2.5.6.0
+# rdnAttId: cn
+rdnAttId: 2.5.4.3
+# systemPossSuperiors: domainDNS
+systemPossSuperiors: 1.2.840.113556.1.5.67
+# defaultObjectCategory: builtinDomain
+defaultObjectCategory: cn=Builtin-Domain,cn=Schema,cn=Configuration,dc=X
+-
+
+dn: CN=User-Proxy-Full,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: possSuperiors
+# possSuperiors: builtinDomain
+possSuperiors: 1.2.840.113556.1.5.4
+-
+
+dn: CN=Group,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: possSuperiors
+# possSuperiors: builtinDomain
+possSuperiors: 1.2.840.113556.1.5.4
+-
+
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
