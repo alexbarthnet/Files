@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <doc>
  <configuration>
-  <description>ADAMSync-UserProxyFull-Template</description>
+  <description>ADAMSync-UserProxyFull-%INSTANCENAME%</description>
   <security-mode>partition</security-mode>
-  <source-ad-name>domain.com</source-ad-name>
-  <source-ad-partition>dc=domain,dc=com</source-ad-partition>
+  <source-ad-name>%DOMAINNAME%</source-ad-name>
+  <source-ad-partition>%PARTITION%</source-ad-partition>
   <source-ad-account></source-ad-account>
   <account-domain></account-domain>
-  <target-dn>dc=domain,dc=com</target-dn>
+  <target-dn>%PARTITION%</target-dn>
   <query>
-   <base-dn>dc=domain,dc=com</base-dn>
+   <base-dn>%PARTITION%</base-dn>
    <object-filter>(&#124;(objectCategory=person)(objectCategory=group))</object-filter>
    <attributes>
-    <include>objectSID</include>
+    <include>objectSid</include>
     <include>member</include>
     <include>sAMAccountName</include>
    </attributes>
