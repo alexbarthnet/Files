@@ -26,7 +26,6 @@ rdnAttId: 2.5.4.3
 systemPossSuperiors: 1.2.840.113556.1.5.67
 # defaultObjectCategory: builtinDomain
 defaultObjectCategory: cn=Builtin-Domain,cn=Schema,cn=Configuration,dc=X
--
 
 dn: CN=User-Proxy-Full,CN=Schema,CN=Configuration,DC=X
 changetype: ntdsschemamodify
