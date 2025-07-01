@@ -1,0 +1,42 @@
+#==================================================================
+# @@UI-Description: AD LDS Primary Group ID attribute. Requires MS-User.LDF or MS-InetOrgPerson.LDF.
+#
+# This file contains extensions to the User class.
+# Before importing this extension, make sure either MS-User.LDF or MS-InetOrgPerson.LDF are imported.
+# It should be imported with the following command:
+#   ldifde -i -f User-PrimaryGroupId.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+# Attribute: primaryGroupID
+dn: cn=Primary-Group-ID,cn=Schema,cn=Configuration,dc=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.98
+ldapDisplayName: primaryGroupID
+attributeSyntax: 2.5.5.9
+adminDescription: Primary-Group-ID
+adminDisplayName: Primary-Group-ID
+# schemaIDGUID: bf967a00-0de6-11d0-a285-00aa003049e2
+schemaIDGUID:: AHqWv+YN0BGihQCqADBJ4g==
+# attributeSecurityGUID: General Information
+attributeSecurityGUID:: Qi+6WaJ50BGQIADAT8LTzw==
+oMSyntax: 2
+searchFlags: 17
+systemFlags: 18
+isMemberOfPartialAttributeSet: TRUE
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: systemMayContain
+# systemMayContain: primaryGroupID
+systemMayContain: 1.2.840.113556.1.4.98
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
