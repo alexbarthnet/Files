@@ -8,4 +8,4 @@ LocalLDAPPortToListenOn=%LDAPPORT%
 LocalSSLPortToListenOn=%SSLPORT%
 DataFilesPath=%DATAFILESPATH%
 LogFilesPath=%LOGFILESPATH%
-Administrator=%ADMINISTRATOR%
+Administrator=%ADMINISTRATOR%@%DOMAINNAME%
