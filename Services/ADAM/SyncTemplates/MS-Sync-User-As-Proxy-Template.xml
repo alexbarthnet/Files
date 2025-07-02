@@ -9,7 +9,7 @@
   <account-domain></account-domain>
   <target-dn>%PARTITION%</target-dn>
   <query>
-   <base-dn>%PARTITION%</base-dn>
+   <base-dn>%BASEDN%</base-dn>
    <object-filter>%FILTER%</object-filter>
    <attributes>
     <include>%INCLUDE%</include>
