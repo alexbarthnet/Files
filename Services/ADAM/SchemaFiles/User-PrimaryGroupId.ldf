@@ -30,9 +30,9 @@ systemOnly: FALSE
 
 dn: CN=User,CN=Schema,CN=Configuration,DC=X
 changetype: ntdsschemamodify
-add: systemMayContain
-# systemMayContain: primaryGroupID
-systemMayContain: 1.2.840.113556.1.4.98
+add: mayContain
+# mayContain: primaryGroupID
+mayContain: 1.2.840.113556.1.4.98
 -
 
 
