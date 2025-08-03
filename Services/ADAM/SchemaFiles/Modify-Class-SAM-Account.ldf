@@ -1,0 +1,35 @@
+#==================================================================
+# @@UI-Description: AD LDS SAM Account attributes. Requires Add-Attribute-SAM-Account.LDF.
+#
+# This file contains extensions to the msDS-BindProxy and securityPrincipal classes.
+# Before importing this extension, make sure Add-Attribute-SAM-Account.LDF is imported.
+# It should be imported with the following command:
+#   ldifde -i -f Modify-Class-SAM-Account.LDF -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: CN=ms-DS-Bind-Proxy,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: mayContain
+# mayContain: sAMAccountName
+mayContain: 1.2.840.113556.1.4.221
+# mayContain: sAMAccountType
+mayContain: 1.2.840.113556.1.4.302
+-
+
+dn: CN=Security-Principal,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: mayContain
+# mayContain: sAMAccountName
+mayContain: 1.2.840.113556.1.4.221
+# mayContain: sAMAccountType
+mayContain: 1.2.840.113556.1.4.302
+-
+
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

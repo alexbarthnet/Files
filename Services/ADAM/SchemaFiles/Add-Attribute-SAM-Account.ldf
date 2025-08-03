@@ -1,0 +1,55 @@
+#==================================================================
+# @@UI-Description: AD LDS SAM Account Name and Type attributes.
+#
+# This file contains new attributes for default ADAM schema.
+# This file should be imported with the following command:
+#   ldifde -i -f Attributes-SAM-Account.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: CN=SAM-Account-Name,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.221
+ldapDisplayName: sAMAccountName
+attributeSyntax: 2.5.5.12
+adminDescription: SAM-Account-Name
+adminDisplayName: SAM-Account-Name
+# schemaIDGUID: 3e0abfd0-126a-11d0-a060-00aa006c33ed
+schemaIDGUID:: 0L8KPmoS0BGgYACqAGwz7Q==
+# attributeSecurityGUID: General Information
+attributeSecurityGUID:: Qi+6WaJ50BGQIADAT8LTzw==
+oMSyntax: 64
+searchFlags: 13
+systemFlags: 18
+isMemberOfPartialAttributeSet: TRUE
+isSingleValued: TRUE
+systemOnly: FALSE
+rangeLower: 0
+rangeUpper: 256
+
+dn: CN=SAM-Account-Type,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.302
+ldapDisplayName: sAMAccountType
+attributeSyntax: 2.5.5.9
+adminDescription: SAM-Account-Type
+adminDisplayName: SAM-Account-Type
+# schemaIDGUID: 6e7b626c-64f2-11d0-afd2-00c04fd930c9
+schemaIDGUID:: bGJ7bvJk0BGv0gDAT9kwyQ==
+# attributeSecurityGUID: General Information
+attributeSecurityGUID:: Qi+6WaJ50BGQIADAT8LTzw==
+oMSyntax: 2
+searchFlags: 1
+systemFlags: 18
+isMemberOfPartialAttributeSet: TRUE
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

@@ -1,0 +1,236 @@
+#==================================================================
+# @@UI-Description: AD LDS RFC2307bis attributes.
+#
+# This file contains new attributes for default ADAM schema.
+# This file should be imported with the following command:
+#   ldifde -i -f Attributes-RFC2307bis.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: CN=Home-Directory,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.44
+ldapDisplayName: homeDirectory
+attributeSyntax: 2.5.5.12
+adminDescription: Home-Directory
+adminDisplayName: Home-Directory
+# schemaIDGUID: bf967985-0de6-11d0-a285-00aa003049e2
+schemaIDGUID:: hXmWv+YN0BGihQCqADBJ4g==
+# attributeSecurityGUID: Logon Information
+attributeSecurityGUID:: ECAgX6V50BGQIADAT8LUzw==
+oMSyntax: 64
+searchFlags: 16
+systemFlags: 16
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=UnixUserPassword,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.1910
+ldapDisplayName: unixUserPassword
+attributeSyntax: 2.5.5.10
+adminDescription: userPassword compatible with Unix system.
+adminDisplayName: unixUserPassword
+# schemaIDGUID: 612cb747-c0e8-4f92-9221-fdd5f15b550d
+schemaIDGUID:: R7csYejAkk+SIf3V8VtVDQ==
+oMSyntax: 4
+searchFlags: 128
+systemOnly: FALSE
+rangeLower: 1
+rangeUpper: 128
+
+dn: CN=UidNumber,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.0
+ldapDisplayName: uidNumber
+attributeSyntax: 2.5.5.9
+adminDescription: An integer uniquely identifying a user in an administrative domain (RFC 2307)
+adminDisplayName: uidNumber
+# schemaIDGUID: 850fcc8f-9c6b-47e1-b671-7c654be4d5b3
+schemaIDGUID:: j8wPhWuc4Ue2cXxlS+TVsw==
+oMSyntax: 2
+searchFlags: 1
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=GidNumber,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.1
+ldapDisplayName: gidNumber
+attributeSyntax: 2.5.5.9
+adminDescription: An integer uniquely identifying a group in an administrative domain (RFC 2307)
+adminDisplayName: gidNumber
+# schemaIDGUID: c5b95f0c-ec9e-41c4-849c-b46597ed6696
+schemaIDGUID:: DF+5xZ7sxEGEnLRll+1mlg==
+oMSyntax: 2
+searchFlags: 1
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=Gecos,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.2
+ldapDisplayName: gecos
+attributeSyntax: 2.5.5.5
+adminDescription: The GECOS field; the common name (RFC 2307)
+adminDisplayName: gecos
+# schemaIDGUID: a3e03f1f-1d55-4253-a0af-30c2a784e46e
+schemaIDGUID:: Hz/go1UdU0KgrzDCp4Tkbg==
+oMSyntax: 22
+isSingleValued: TRUE
+systemOnly: FALSE
+rangeUpper: 10240
+
+dn: CN=UnixHomeDirectory,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.3
+ldapDisplayName: unixHomeDirectory
+attributeSyntax: 2.5.5.5
+adminDescription: The absolute path to the home directory (RFC 2307)
+adminDisplayName: unixHomeDirectory
+# schemaIDGUID: bc2dba12-000f-464d-bf1d-0808465d8843
+schemaIDGUID:: ErotvA8ATUa/HQgIRl2IQw==
+oMSyntax: 22
+isSingleValued: TRUE
+systemOnly: FALSE
+rangeUpper: 2048
+
+dn: CN=LoginShell,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.4
+ldapDisplayName: loginShell
+attributeSyntax: 2.5.5.5
+adminDescription: The path to the login shell (RFC 2307)
+adminDisplayName: loginShell
+# schemaIDGUID: a553d12c-3231-4c5e-8adf-8d189697721e
+schemaIDGUID:: LNFTpTEyXkyK340YlpdyHg==
+oMSyntax: 22
+isSingleValued: TRUE
+systemOnly: FALSE
+rangeUpper: 1024
+
+dn: CN=ShadowLastChange,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.5
+ldapDisplayName: shadowLastChange
+attributeSyntax: 2.5.5.9
+adminDescription: Last change of shadow information.
+adminDisplayName: shadowLastChange
+# schemaIDGUID: f8f2689c-29e8-4843-8177-e8b98e15eeac
+schemaIDGUID:: nGjy+OgpQ0iBd+i5jhXurA==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowMin,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.6
+ldapDisplayName: shadowMin
+attributeSyntax: 2.5.5.9
+adminDescription: Minimum number of days between shadow changes.
+adminDisplayName: shadowMin
+# schemaIDGUID: a76b8737-e5a1-4568-b057-dc12e04be4b2
+schemaIDGUID:: N4drp6HlaEWwV9wS4Evksg==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowMax,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.7
+ldapDisplayName: shadowMax
+attributeSyntax: 2.5.5.9
+adminDescription: Maximum number of days password is valid.
+adminDisplayName: shadowMax
+# schemaIDGUID: f285c952-50dd-449e-9160-3b880d99988d
+schemaIDGUID:: UsmF8t1QnkSRYDuIDZmYjQ==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowWarning,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.8
+ldapDisplayName: shadowWarning
+attributeSyntax: 2.5.5.9
+adminDescription: Number of days before password expiry to warn user
+adminDisplayName: shadowWarning
+# schemaIDGUID: 7ae89c9c-2976-4a46-bb8a-340f88560117
+schemaIDGUID:: nJzoenYpRkq7ijQPiFYBFw==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowInactive,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.9
+ldapDisplayName: shadowInactive
+attributeSyntax: 2.5.5.9
+adminDescription: Number of days before password expiry to warn user
+adminDisplayName: shadowInactive
+# schemaIDGUID: 86871d1f-3310-4312-8efd-af49dcfb2671
+schemaIDGUID:: Hx2HhhAzEkOO/a9J3PsmcQ==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowExpire,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.10
+ldapDisplayName: shadowExpire
+attributeSyntax: 2.5.5.9
+adminDescription: Absolute date to expire account
+adminDisplayName: shadowExpire
+# schemaIDGUID: 75159a00-1fff-4cf4-8bff-4ef2695cf643
+schemaIDGUID:: AJoVdf8f9EyL/07yaVz2Qw==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=ShadowFlag,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.11
+ldapDisplayName: shadowFlag
+attributeSyntax: 2.5.5.9
+adminDescription: This is a part of the shadow map used to store the flag value.
+adminDisplayName: shadowFlag
+# schemaIDGUID: 8dfeb70d-c5db-46b6-b15e-a4389e6cee9b
+schemaIDGUID:: Dbf+jdvFtkaxXqQ4nmzumw==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: CN=MemberUid,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.3.6.1.1.1.1.12
+ldapDisplayName: memberUid
+attributeSyntax: 2.5.5.5
+adminDescription: This multivalued attribute holds the login names of the members of a group.
+adminDisplayName: memberUid
+# schemaIDGUID: 03dab236-672e-4f61-ab64-f77d2dc2ffab
+schemaIDGUID:: NrLaAy5nYU+rZPd9LcL/qw==
+oMSyntax: 22
+systemOnly: FALSE
+rangeUpper: 256000
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

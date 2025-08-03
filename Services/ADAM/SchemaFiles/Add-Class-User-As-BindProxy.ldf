@@ -1,0 +1,217 @@
+#==================================================================
+# @@UI-Description: AD LDS User class with the msDS-BindProxy auxiliary class instead of the securityPrincipal auxiliary class
+#
+# This file contains extensions for default ADAM schema.
+# Before importing this extension, make sure Attributes-RFC2307bis.ldf is imported.
+# It should be imported with the following command:
+#   ldifde -i -f Classes-User-As-BindProxy.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+# Classes
+
+dn: CN=Person,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: classSchema
+cn: Person
+subClassOf: top
+governsID: 2.5.6.6
+# added to ADAM schema
+mayContain: attributeCertificateAttribute
+rDNAttID: cn
+showInAdvancedViewOnly: TRUE
+adminDisplayName: Person
+adminDescription: Person
+objectClassCategory: 0
+lDAPDisplayName: person
+name: Person
+schemaIDGUID:: p3qWv+YN0BGihQCqADBJ4g==
+systemOnly: FALSE
+systemPossSuperiors: organizationalUnit
+systemPossSuperiors: container
+# default ADAM schema
+systemMayContain: userPassword
+systemMayContain: telephoneNumber
+systemMayContain: seeAlso
+systemMustContain: cn
+# added to ADAM schema
+systemMayContain: sn
+systemMayContain: serialNumber
+defaultSecurityDescriptor:
+ D:S:
+defaultHidingValue: TRUE
+defaultObjectCategory: CN=Person,CN=Schema,CN=Configuration,DC=X
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=Organizational-Person,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: classSchema
+cn: Organizational-Person
+subClassOf: person
+governsID: 2.5.6.7
+# added to ADAM schema for organizationalPerson class
+mayContain: houseIdentifier
+mayContain: homePostalAddress
+rDNAttID: cn
+showInAdvancedViewOnly: TRUE
+adminDisplayName: Organizational-Person
+adminDescription: Organizational-Person
+objectClassCategory: 0
+lDAPDisplayName: organizationalPerson
+name: Organizational-Person
+schemaIDGUID:: pHqWv+YN0BGihQCqADBJ4g==
+systemOnly: FALSE
+systemPossSuperiors: organizationalUnit
+systemPossSuperiors: organization
+systemPossSuperiors: container
+# default ADAM schema
+systemMayContain: x121Address
+systemMayContain: thumbnailLogo
+systemMayContain: telexNumber
+systemMayContain: teletexTerminalIdentifier
+systemMayContain: street
+systemMayContain: st
+systemMayContain: registeredAddress
+systemMayContain: preferredDeliveryMethod
+systemMayContain: postOfficeBox
+systemMayContain: postalCode
+systemMayContain: postalAddress
+systemMayContain: physicalDeliveryOfficeName
+systemMayContain: ou
+systemMayContain: o
+systemMayContain: l
+systemMayContain: internationalISDNNumber
+systemMayContain: facsimileTelephoneNumber
+systemMayContain: destinationIndicator
+systemMayContain: countryCode
+systemMayContain: co
+systemMayContain: c
+# added to ADAM schema for organizationalPerson class
+systemMayContain: comment
+systemMayContain: title
+systemMayContain: primaryTelexNumber
+systemMayContain: thumbnailPhoto
+systemMayContain: pager
+systemMayContain: otherPager
+systemMayContain: otherTelephone
+systemMayContain: mobile
+systemMayContain: otherMobile
+systemMayContain: primaryInternationalISDNNumber
+systemMayContain: ipPhone
+systemMayContain: otherIpPhone
+systemMayContain: otherHomePhone
+systemMayContain: homePhone
+systemMayContain: otherFacsimileTelephoneNumber
+systemMayContain: personalTitle
+systemMayContain: middleName
+systemMayContain: manager
+systemMayContain: initials
+systemMayContain: givenName
+systemMayContain: generationQualifier
+systemMayContain: employeeID
+systemMayContain: mail
+systemMayContain: division
+systemMayContain: department
+systemMayContain: company
+systemMayContain: assistant
+systemMayContain: streetAddress
+defaultSecurityDescriptor:
+ D:S:
+defaultHidingValue: TRUE
+defaultObjectCategory: CN=Person,CN=Schema,CN=Configuration,DC=X
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: classSchema
+cn: User
+subClassOf: organizationalPerson
+governsID: 1.2.840.113556.1.5.9
+# default to ADAM schema
+mayContain: displayName
+# added to ADAM schema for organizationalPerson class
+mayContain: givenName
+# added to ADAM schema for user class
+mayContain: x500uniqueIdentifier
+mayContain: userSMIMECertificate
+mayContain: userPKCS12
+mayContain: uid
+mayContain: secretary
+mayContain: roomNumber
+mayContain: preferredLanguage
+mayContain: photo
+mayContain: labeledURI
+mayContain: jpegPhoto
+mayContain: homePostalAddress
+mayContain: employeeType
+mayContain: employeeNumber
+mayContain: departmentNumber
+mayContain: carLicense
+mayContain: audio
+rDNAttID: cn
+showInAdvancedViewOnly: TRUE
+adminDisplayName: User
+adminDescription: User
+objectClassCategory: 1
+lDAPDisplayName: user
+name: User
+schemaIDGUID:: unqWv+YN0BGihQCqADBJ4g==
+systemOnly: FALSE
+systemPossSuperiors: organizationalUnit
+systemPossSuperiors: domainDNS
+# default ADAM schema
+systemMayContain: userPrincipalName
+systemMayContain: o
+systemMayContain: lastLogonTimestamp
+systemMayContain: businessCategory
+# added to ADAM schema for organizationalPerson class
+systemMayContain: pager
+systemMayContain: mobile
+systemMayContain: homePhone
+systemMayContain: manager
+systemMayContain: initials
+systemMayContain: mail
+# added to ADAM schema for user class
+systemMayContain: userCertificate
+systemMayContain: userParameters
+systemMayContain: preferredOU
+systemMayContain: dynamicLDAPServer
+systemMayContain: defaultClassStore
+systemAuxiliaryClass: msDS-BindProxy
+defaultSecurityDescriptor:
+ D:(OA;;CR;ab721a53-1e2f-11d0-9819-00aa0040529b;;PS)S:
+defaultHidingValue: FALSE
+defaultObjectCategory: CN=Person,CN=Schema,CN=Configuration,DC=X
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=Top,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: mayContain
+mayContain: directReports
+-
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+

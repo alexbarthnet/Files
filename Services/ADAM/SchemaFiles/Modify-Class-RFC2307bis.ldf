@@ -1,0 +1,35 @@
+#==================================================================
+# @@UI-Description: AD LDS RFC2307bis PosixAccount and ShadowAccount classes. Requires Attributes-RFC2307bis.LDF.
+#
+# This file creates extensions to the User class.
+# Before importing this extension, make sure Attributes-RFC2307bis.LDF and Classes-User-As-BindProxy.LDF are imported.
+# It should be imported with the following command:
+#   ldifde -i -f Classes-User-RFC2307bis.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: auxiliaryClass
+auxiliaryClass: 1.3.6.1.1.1.2.0
+-
+
+dn: CN=User,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: auxiliaryClass
+auxiliaryClass: 1.3.6.1.1.1.2.1
+-
+
+dn: CN=Group,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsSchemaModify
+add: auxiliaryClass
+auxiliaryClass: 1.3.6.1.1.1.2.2
+-
+
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
