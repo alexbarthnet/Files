@@ -1,10 +1,11 @@
 #==================================================================
-# @@UI-Description: AD LDS RFC2307bis PosixAccount and ShadowAccount classes. Requires Attributes-RFC2307bis.LDF.
+# @@UI-Description: Add RFC2307bis auxiliary classes to User and Group objects
 #
-# This file creates extensions to the User class.
-# Before importing this extension, make sure Attributes-RFC2307bis.LDF and Classes-User-As-BindProxy.LDF are imported.
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-RFC2307bis.ldf
+#  - Add-Class-User-As-BindProxy.ldf
 # It should be imported with the following command:
-#   ldifde -i -f Classes-User-RFC2307bis.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Modify-Class-User-RFC2307bis.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

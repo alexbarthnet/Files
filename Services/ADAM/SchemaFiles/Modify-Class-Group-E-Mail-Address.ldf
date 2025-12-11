@@ -1,10 +1,10 @@
 #==================================================================
-# @@UI-Description: AD LDS Mail attribute for Group objects.
+# @@UI-Description: Add Mail attribute to Group objects
 #
-# This file contains extensions to the Group class using attributes from the User class.
-# Before importing this extension, make sure Attributes-User.ldf is imported.
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-Base-Person.ldf
 # It should be imported with the following command:
-#   ldifde -i -f Classes-Group-E-Mail-Address.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Modify-Class-Group-E-Mail-Address.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

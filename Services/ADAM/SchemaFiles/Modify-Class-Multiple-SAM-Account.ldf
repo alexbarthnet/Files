@@ -1,10 +1,10 @@
 #==================================================================
-# @@UI-Description: AD LDS SAM Account attributes. Requires Add-Attribute-SAM-Account.LDF.
+# @@UI-Description: Add SAM Account attributes to Bind Porxy and Security Principal auxiliary classes
 #
-# This file contains extensions to the msDS-BindProxy and securityPrincipal classes.
-# Before importing this extension, make sure Add-Attribute-SAM-Account.LDF is imported.
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-SAM-Account.ldf
 # It should be imported with the following command:
-#   ldifde -i -f Modify-Class-SAM-Account.LDF -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Modify-Class-Multiple-SAM-Account.LDF -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

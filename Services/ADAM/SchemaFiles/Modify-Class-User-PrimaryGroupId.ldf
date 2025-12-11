@@ -1,10 +1,10 @@
 #==================================================================
-# @@UI-Description: AD LDS Primary Group ID attribute. Requires MS-User.LDF or MS-InetOrgPerson.LDF.
+# @@UI-Description: Add Primary Group ID attribute to User objects
 #
-# This file contains extensions to the User class.
-# Before importing this extension, make sure either MS-User.LDF or MS-InetOrgPerson.LDF are imported.
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Class-User-As-BindProxy.ldf
 # It should be imported with the following command:
-#   ldifde -i -f Classes-User-PrimaryGroupId.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Modify-Class-User-PrimaryGroupId.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 
