@@ -1,10 +1,9 @@
 #==================================================================
-# @@UI-Description: AD LDS Primary Group ID attribute. Requires MS-User.LDF or MS-InetOrgPerson.LDF.
+# @@UI-Description: AD LDS Primary Group ID attribute
 #
-# This file contains extensions to the User class.
-# Before importing this extension, make sure either MS-User.LDF or MS-InetOrgPerson.LDF are imported.
+# This file contains extensions for default ADAM schema.
 # It should be imported with the following command:
-#   ldifde -i -f Classes-User-PrimaryGroupId.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Add-Attribute-PrimaryGroupId.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

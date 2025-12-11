@@ -1,9 +1,9 @@
 #==================================================================
-# @@UI-Description: AD LDS User attributes
+# @@UI-Description: AD LDS User attributes for User-As-BindProxy
 #
-# This file contains user extensions for default ADAM schema.
+# This file contains extensions for default ADAM schema.
 # It should be imported with the following command:
-#   ldifde -i -f MS-User.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Add-Attribute-User-As-BindProxy.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

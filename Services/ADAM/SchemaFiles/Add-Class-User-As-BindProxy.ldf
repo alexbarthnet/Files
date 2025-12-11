@@ -1,10 +1,12 @@
 #==================================================================
 # @@UI-Description: AD LDS User class with the msDS-BindProxy auxiliary class instead of the securityPrincipal auxiliary class
 #
-# This file contains extensions for default ADAM schema.
-# Before importing this extension, make sure Attributes-RFC2307bis.ldf is imported.
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-Base-Person.ldf
+#  - Add-Attribute-User-As-BindProxy.ldf
+#  - Add-Class-Base-Person.ldf
 # It should be imported with the following command:
-#   ldifde -i -f Classes-User-As-BindProxy.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Add-Class-User-As-BindProxy.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

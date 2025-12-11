@@ -1,9 +1,9 @@
 #==================================================================
-# @@UI-Description: AD LDS SAM Account Name and Type attributes.
+# @@UI-Description: AD LDS SAM Account Name and Type attributes
 #
-# This file contains new attributes for default ADAM schema.
+# This file contains extensions for default ADAM schema.
 # This file should be imported with the following command:
-#   ldifde -i -f Attributes-SAM-Account.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Add-Attribute-SAM-Account.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 

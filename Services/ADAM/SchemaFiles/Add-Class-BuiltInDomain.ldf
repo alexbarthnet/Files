@@ -1,9 +1,9 @@
 #==================================================================
-# @@UI-Description: AD LDS BuiltInDomain class.
+# @@UI-Description: AD LDS BuiltInDomain class
 #
-# This file contains the Built-in Domain class.
+# This file contains extensions for default ADAM schema.
 # It should be imported with the following command:
-#   ldifde -i -f MS-Sync-BuiltInDomain.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#   ldifde -i -f Add-Class-BuiltInDomain.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
 #
 #==================================================================
 
