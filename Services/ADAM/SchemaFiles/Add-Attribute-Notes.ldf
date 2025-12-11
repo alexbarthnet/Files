@@ -1,0 +1,33 @@
+#==================================================================
+# @@UI-Description: AD LDS Notes attribute
+#
+# This file contains extensions for default ADAM schema.
+# It should be imported with the following command:
+#   ldifde -i -f Add-Attribute-Notes.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: cn=Additional-Information,cn=Schema,cn=Configuration,dc=X
+changetype: ntdsschemaadd
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.265
+ldapDisplayName: notes
+attributeSyntax: 2.5.5.12
+adminDescription: Additional-Information
+adminDisplayName: Additional-Information
+# schemaIDGUID: 6d05fb41-246b-11d0-a9c8-00aa006c33ed
+schemaIDGUID:: QfsFbWsk0BGpyACqAGwz7Q==
+# attributeSecurityGUID: Public Information
+attributeSecurityGUID:: VAGN5Pi80RGHAgDAT7lgUA==
+oMSyntax: 64
+systemFlags: 16
+isSingleValued: TRUE
+systemOnly: FALSE
+rangeUpper: 32768
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

@@ -1,0 +1,136 @@
+#==================================================================
+# @@UI-Description: AD LDS Person and Organizational Person classes required for Contact and User objects
+#
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-Base-Person.ldf
+# It should be imported with the following command:
+#   ldifde -i -f Add-Class-Base-Person.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+# Classes
+
+dn: CN=Person,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: classSchema
+cn: Person
+subClassOf: top
+governsID: 2.5.6.6
+# added to ADAM schema
+mayContain: attributeCertificateAttribute
+rDNAttID: cn
+showInAdvancedViewOnly: TRUE
+adminDisplayName: Person
+adminDescription: Person
+objectClassCategory: 0
+lDAPDisplayName: person
+name: Person
+schemaIDGUID:: p3qWv+YN0BGihQCqADBJ4g==
+systemOnly: FALSE
+systemPossSuperiors: organizationalUnit
+systemPossSuperiors: container
+# default ADAM schema
+systemMayContain: userPassword
+systemMayContain: telephoneNumber
+systemMayContain: seeAlso
+systemMustContain: cn
+# added to ADAM schema
+systemMayContain: sn
+systemMayContain: serialNumber
+defaultSecurityDescriptor:
+ D:S:
+defaultHidingValue: TRUE
+defaultObjectCategory: CN=Person,CN=Schema,CN=Configuration,DC=X
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+dn: CN=Organizational-Person,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemaadd
+objectClass: top
+objectClass: classSchema
+cn: Organizational-Person
+subClassOf: person
+governsID: 2.5.6.7
+# added to ADAM schema for organizationalPerson class
+mayContain: houseIdentifier
+mayContain: homePostalAddress
+rDNAttID: cn
+showInAdvancedViewOnly: TRUE
+adminDisplayName: Organizational-Person
+adminDescription: Organizational-Person
+objectClassCategory: 0
+lDAPDisplayName: organizationalPerson
+name: Organizational-Person
+schemaIDGUID:: pHqWv+YN0BGihQCqADBJ4g==
+systemOnly: FALSE
+systemPossSuperiors: organizationalUnit
+systemPossSuperiors: organization
+systemPossSuperiors: container
+# default ADAM schema
+systemMayContain: x121Address
+systemMayContain: thumbnailLogo
+systemMayContain: telexNumber
+systemMayContain: teletexTerminalIdentifier
+systemMayContain: street
+systemMayContain: st
+systemMayContain: registeredAddress
+systemMayContain: preferredDeliveryMethod
+systemMayContain: postOfficeBox
+systemMayContain: postalCode
+systemMayContain: postalAddress
+systemMayContain: physicalDeliveryOfficeName
+systemMayContain: ou
+systemMayContain: o
+systemMayContain: l
+systemMayContain: internationalISDNNumber
+systemMayContain: facsimileTelephoneNumber
+systemMayContain: destinationIndicator
+systemMayContain: countryCode
+systemMayContain: co
+systemMayContain: c
+# added to ADAM schema for organizationalPerson class
+systemMayContain: comment
+systemMayContain: title
+systemMayContain: primaryTelexNumber
+systemMayContain: thumbnailPhoto
+systemMayContain: pager
+systemMayContain: otherPager
+systemMayContain: otherTelephone
+systemMayContain: mobile
+systemMayContain: otherMobile
+systemMayContain: primaryInternationalISDNNumber
+systemMayContain: ipPhone
+systemMayContain: otherIpPhone
+systemMayContain: otherHomePhone
+systemMayContain: homePhone
+systemMayContain: otherFacsimileTelephoneNumber
+systemMayContain: personalTitle
+systemMayContain: middleName
+systemMayContain: manager
+systemMayContain: initials
+systemMayContain: givenName
+systemMayContain: generationQualifier
+systemMayContain: employeeID
+systemMayContain: mail
+systemMayContain: division
+systemMayContain: department
+systemMayContain: company
+systemMayContain: assistant
+systemMayContain: streetAddress
+defaultSecurityDescriptor:
+ D:S:
+defaultHidingValue: TRUE
+defaultObjectCategory: CN=Person,CN=Schema,CN=Configuration,DC=X
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
+
