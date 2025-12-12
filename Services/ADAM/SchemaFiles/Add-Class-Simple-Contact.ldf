@@ -29,14 +29,10 @@ rdnAttId: 2.5.4.3
 systemMustContain: 2.5.4.3
 # systemMayContain: notes
 systemMayContain: 1.2.840.113556.1.4.265
-# mayContain: msDS-SourceObjectDN
-mayContain: 1.2.840.113556.1.4.1879
 # systemPossSuperiors: domainDNS
 systemPossSuperiors: 1.2.840.113556.1.5.67
 # systemPossSuperiors: organizationalUnit
 systemPossSuperiors: 2.5.6.5
-# systemAuxiliaryClass: mailRecipient
-# systemAuxiliaryClass: 1.2.840.113556.1.3.46
 # defaultObjectCategory: person
 defaultObjectCategory: cn=Person,cn=Schema,cn=Configuration,dc=X
 
