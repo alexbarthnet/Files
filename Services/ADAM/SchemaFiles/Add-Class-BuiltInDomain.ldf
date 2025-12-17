@@ -27,14 +27,6 @@ systemPossSuperiors: 1.2.840.113556.1.5.67
 # defaultObjectCategory: builtinDomain
 defaultObjectCategory: cn=Builtin-Domain,cn=Schema,cn=Configuration,dc=X
 
-dn: CN=Group,CN=Schema,CN=Configuration,DC=X
-changetype: ntdsschemamodify
-add: possSuperiors
-# possSuperiors: builtinDomain
-possSuperiors: 1.2.840.113556.1.5.4
--
-
-
 dn:
 changetype: modify
 add: schemaUpdateNow

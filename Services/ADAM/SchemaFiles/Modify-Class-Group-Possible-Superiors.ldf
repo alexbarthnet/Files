@@ -1,0 +1,23 @@
+#==================================================================
+# @@UI-Description: Add Built-In Domain object as possible superior to Group objects
+#
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Class-BuiltInDomain.ldf
+# It should be imported with the following command:
+#   ldifde -i -f Modify-Class-Group-Possible-Superiors.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+dn: CN=Group,CN=Schema,CN=Configuration,DC=X
+changetype: ntdsschemamodify
+add: possSuperiors
+# possSuperiors: builtinDomain
+possSuperiors: 1.2.840.113556.1.5.4
+-
+
+
+dn:
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
