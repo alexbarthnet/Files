@@ -1,0 +1,42 @@
+#==================================================================
+# @@UI-Description: AD LDS classes to emulate Exchange objects
+#
+# Before importing this extension, make sure the following files are imported:
+#  - Add-Attribute-Exchange-Objects.ldf
+# It should be imported with the following command:
+#   ldifde -i -f Add-Class-Exchange-Objects.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+# Class: msExchAcceptedDomain
+dn: cn=ms-Exch-Accepted-Domain,cn=Schema,cn=Configuration,dc=X
+changetype: add
+objectClass: classSchema
+governsID: 1.2.840.113556.1.5.7000.62.50089
+ldapDisplayName: msExchAcceptedDomain
+adminDisplayName: ms-Exch-Accepted-Domain
+adminDescription: ms-Exch-Accepted-Domain
+# schemaIDGUID: 9d71afc6-2c40-4c23-8cd7-e55b7d3129bd
+schemaIDGUID:: xq9xnUAsI0yM1+VbfTEpvQ==
+objectClassCategory: 1
+defaultSecurityDescriptor: D:S:
+systemOnly: FALSE
+# subclassOf: top
+subclassOf: 2.5.6.0
+# rdnAttId: cn
+rdnAttId: 2.5.4.3
+# mayContain: msExchAcceptedDomainFlags
+mayContain: 1.2.840.113556.1.4.7000.102.50745
+# mayContain: msExchAcceptedDomainName
+mayContain: 1.2.840.113556.1.4.7000.102.50778
+# possSuperiors: container
+possSuperiors: 1.2.840.113556.1.3.23
+# defaultObjectCategory: msExchAcceptedDomain
+defaultObjectCategory: cn=ms-Exch-Accepted-Domain,cn=Schema,cn=Configuration,dc=X
+
+dn: 
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+

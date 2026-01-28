@@ -1,0 +1,47 @@
+#==================================================================
+# @@UI-Description: AD LDS attributes to emulate Exchange objects
+#
+# This file contains extensions for default ADAM schema.
+# It should be imported with the following command:
+#   ldifde -i -f Add-Attribute-Exchange-Objects.ldf -s server:port -b username domain password -k -j . -c "CN=Schema,CN=Configuration,DC=X" #schemaNamingContext
+#
+#==================================================================
+
+# Attribute: msExchAcceptedDomainFlags
+dn: cn=ms-Exch-Accepted-Domain-Flags,cn=Schema,cn=Configuration,dc=X
+changetype: add
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.7000.102.50745
+ldapDisplayName: msExchAcceptedDomainFlags
+attributeSyntax: 2.5.5.9
+adminDescription: ms-Exch-Accepted-Domain-Flags
+adminDisplayName: ms-Exch-Accepted-Domain-Flags
+# schemaIDGUID: c7b9a038-99d2-48da-b22c-8a5412cf7a81
+schemaIDGUID:: OKC5x9KZ2kiyLIpUEs96gQ==
+oMSyntax: 2
+isSingleValued: TRUE
+systemOnly: FALSE
+
+# Attribute: msExchAcceptedDomainName
+dn: cn=ms-Exch-Accepted-Domain-Name,cn=Schema,cn=Configuration,dc=X
+changetype: add
+objectClass: attributeSchema
+attributeId: 1.2.840.113556.1.4.7000.102.50778
+ldapDisplayName: msExchAcceptedDomainName
+attributeSyntax: 2.5.5.4
+adminDescription: ms-Exch-Accepted-Domain-Name
+adminDisplayName: ms-Exch-Accepted-Domain-Name
+# schemaIDGUID: 9a895c75-f88c-4fd0-a0da-91ff20affa2c
+schemaIDGUID:: dVyJmoz40E+g2pH/IK/6LA==
+rangeUpper: 362
+searchFlags: 9
+oMSyntax: 20
+isSingleValued: TRUE
+systemOnly: FALSE
+
+dn: 
+changetype: modify
+add: schemaUpdateNow
+schemaUpdateNow: 1
+-
+
